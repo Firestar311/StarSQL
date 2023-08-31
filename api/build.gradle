@@ -1,0 +1,48 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        allowInsecureProtocol = true
+        name "reposilite"
+        url "http://localhost:8080/snapshots"
+    }
+}
+
+dependencies {
+    api 'me.firestar311.starlib:api:1.0-SNAPSHOT'
+}
+
+group 'me.firestar311.starsql'
+version '1.0-SNAPSHOT'
+
+publishing {
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            name = "reposilite"
+            url "http://localhost:8080/snapshots"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = "api"
+            version = version
+            from components.java
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

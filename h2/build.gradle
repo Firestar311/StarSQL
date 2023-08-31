@@ -1,0 +1,60 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'me.firestar311.starsql'
+version '1.0-SNAPSHOT'
+
+publishing {
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            name = "reposilite"
+            url "http://localhost:8080/snapshots"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = "h2"
+            version = version
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    api project(':api')
+    api 'me.firestar311.starlib:api:1.0-SNAPSHOT'
+    api 'com.h2database:h2:2.2.220'
+}
+
+def uberJar = tasks.register('uberJar', Jar) {
+    archiveBaseName = 'StarSQL-H2'
+
+    from sourceSets.main.output
+
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}
+
+jar.configure {
+    finalizedBy(uberJar)
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

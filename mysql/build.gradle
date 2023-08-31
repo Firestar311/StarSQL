@@ -1,0 +1,60 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'me.firestar311.starsql'
+version '1.0-SNAPSHOT'
+
+publishing {
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            name = "reposilite"
+            url "http://localhost:8080/snapshots"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = "mysql"
+            version = version
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    api project(':api')
+    api 'me.firestar311.starlib:api:.0-SNAPSHOT'
+    api 'com.mysql:mysql-connector-j:8.1.0'
+}
+
+def uberJar = tasks.register('uberJar', Jar) {
+    archiveBaseName = 'StarSQL-MySQL'
+
+    from sourceSets.main.output
+
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}
+
+jar.configure {
+    finalizedBy(uberJar)
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
