@@ -1,10 +1,17 @@
 package me.firestar311.starsql.h2;
 
+import me.firestar311.starsql.api.objects.Row;
 import me.firestar311.starsql.api.objects.SQLDatabase;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class H2Database extends SQLDatabase {
+    
+    private Connection connection;
+    
     public H2Database(Logger logger, H2Properties properties) {
         super(logger, properties);
         
@@ -13,7 +20,7 @@ public class H2Database extends SQLDatabase {
             url += properties.getType() + ":";
         }
         
-        url += properties.getDatabaseName();
+        url += properties.getDatabaseName() + ";DATABASE_TO_LOWER=TRUE;MODE=MYSQL";
         
         if (exists(properties.getCipher())) {
             url += ";CIPHER=" + properties.getCipher().toUpperCase();
@@ -47,17 +54,65 @@ public class H2Database extends SQLDatabase {
             url += ";ACCESS_MODE_DATA=" + properties.getAccessMode().toUpperCase();
         }
         
-        if (exists(properties.getCompatibilityMode())) {
-            url += ";MODE=" + properties.getCompatibilityMode().toUpperCase();
-        }
-        
         if (properties.isAutoReconnect()) {
             url += ";AUTO_RECONNECT=TRUE";
         }
         
         this.url = url;
     }
-    
+
+    @Override
+    public void execute(String sql) throws SQLException {
+        try (Statement statement = getConnection().createStatement()) {
+            statement.executeUpdate(sql);
+        }
+    }
+
+    @Override
+    public void executePrepared(String sql, Object... args) throws SQLException {
+        try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
+            boolean value = parsePreparedParmeters(statement, args);
+            if (value) {
+                statement.executeUpdate();
+            }
+        }
+    }
+
+    @Override
+    public List<Row> executeQuery(String sql) throws SQLException {
+        List<Row> rows = new ArrayList<>();
+        try (Statement statement = getConnection().createStatement()) {
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                rows.add(new Row(resultSet, this));
+            }
+            return rows;
+        }
+    }
+
+    @Override
+    public List<Row> executePreparedQuery(String sql, Object... args) throws SQLException {
+        List<Row> rows = new ArrayList<>();
+        try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
+            boolean value = parsePreparedParmeters(statement, args);
+            if (value) {
+                ResultSet resultSet = statement.executeQuery(sql);
+                while (resultSet.next()) {
+                    rows.add(new Row(resultSet, this));
+                }
+            }
+            return rows;
+        }
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException {
+        if (this.connection == null) {
+            this.connection = super.getConnection();
+        }
+        return connection;
+    }
+
     private boolean exists(String value) {
         return value != null && !value.isEmpty();
     }

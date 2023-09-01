@@ -13,7 +13,6 @@ public class H2Properties extends SQLProperties {
     private int traceLevelFile = -1;
     private boolean ignoreUnknownSettings;
     private String accessMode;
-    private String compatibilityMode;
     private boolean autoReconnect;
 
     public String getType() {
@@ -22,15 +21,6 @@ public class H2Properties extends SQLProperties {
 
     public H2Properties setType(String type) {
         this.type = type;
-        return this;
-    }
-
-    public String getCompatibilityMode() {
-        return compatibilityMode;
-    }
-
-    public H2Properties setCompatibilityMode(String compatibilityMode) {
-        this.compatibilityMode = compatibilityMode;
         return this;
     }
 

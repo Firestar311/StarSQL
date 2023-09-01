@@ -1,6 +1,6 @@
 package me.firestar311.starsql.api.objects;
 
-class PushInfo {
+public class PushInfo {
     private final String sql;
     private final boolean generateKeys;
     private final Table table;

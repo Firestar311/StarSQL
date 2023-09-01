@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  * This is also the first class where you can customize the {@link TypeHandler}'s. All TypeHandlers registered to this class will be shared across all databases registered here as well. These MUST be registered before calling the setup method or before the database you want to use it is registered.
  * @see SQLDatabase
  */
+@SuppressWarnings("DanglingJavadoc")
 public class DatabaseRegistry extends Registry<SQLDatabase> {
     
     private boolean setup;
@@ -62,7 +63,7 @@ public class DatabaseRegistry extends Registry<SQLDatabase> {
      */
     public void register(SQLDatabase object) {
         super.register(object.getName(), object);
-        if (this.setup) {
+        if (!this.setup) {
             for (Table table : object.getTables()) {
                 try {
                     object.execute(table.generateCreationStatement());
@@ -86,11 +87,11 @@ public class DatabaseRegistry extends Registry<SQLDatabase> {
      * @param primary  This is mainly for another project, will probably remove this
      * @return The created Database
      */
-    public SQLDatabase register(String type, String name, String host, String user, String password, boolean primary) {
-        SQLDatabase database = new SQLDatabase(this.logger, type, name, host, user, password, primary);
-        register(database);
-        return database;
-    }
+//    public SQLDatabase register(String type, String name, String host, String user, String password, boolean primary) {
+//        SQLDatabase database = new SQLDatabase(this.logger, type, name, host, user, password, primary);
+//        register(database);
+//        return database;
+//    }
     
     /**
      * Registers a new database using the supplied methods
@@ -101,11 +102,11 @@ public class DatabaseRegistry extends Registry<SQLDatabase> {
      * @param password The password to use for the connection
      * @return The created database
      */
-    public SQLDatabase register(String name, String host, String user, String password) {
-        SQLDatabase database = new SQLDatabase(this.logger, name, host, user, password);
-        register(database);
-        return database;
-    }
+//    public SQLDatabase register(String name, String host, String user, String password) {
+//        SQLDatabase database = new SQLDatabase(this.logger, name, host, user, password);
+//        register(database);
+//        return database;
+//    }
     
     /**
      * Registers multiple databases.
