@@ -4,45 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5df5b139-3909-42b9-b7b7-45756076e379" name="Changes" comment="Removed code">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/DatabaseRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/StarSQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/ID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/AutoIncrement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/ColumnCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/ColumnIgnored.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/ColumnName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/ColumnNotNull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/ColumnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/column/PrimaryKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/table/TableHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/annotations/table/TableName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/interfaces/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/Column.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/ObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/PushInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/Row.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SQLDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SQLProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SqlCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/TypeDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/TypeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/TypeSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/BooleanHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/DoubleHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/EnumHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/FloatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/IntegerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/LongHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/StringHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/UUIDHander.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/typehandlers/ValueHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2/src/main/java/me/firestar311/starsql/h2/H2Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2/src/main/java/me/firestar311/starsql/h2/H2Properties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="5df5b139-3909-42b9-b7b7-45756076e379" name="Changes" comment="Reimport project and change some things to allow the multiple types">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/StarSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/StarSQL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +73,7 @@
       <updated>1693510913057</updated>
       <workItem from="1693510914652" duration="2244000" />
       <workItem from="1693575773191" duration="3149000" />
-      <workItem from="1693578952569" duration="1356000" />
+      <workItem from="1693578952569" duration="1601000" />
     </task>
     <task id="LOCAL-00001" summary="Some initial setup">
       <option name="closed" value="true" />
@@ -134,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693575906068</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Reimport project and change some things to allow the multiple types">
+      <option name="closed" value="true" />
+      <created>1693586670846</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693586670846</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +117,7 @@
     <MESSAGE value="Some initial setup" />
     <MESSAGE value="Added some more base classes" />
     <MESSAGE value="Removed code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed code" />
+    <MESSAGE value="Reimport project and change some things to allow the multiple types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reimport project and change some things to allow the multiple types" />
   </component>
 </project>
