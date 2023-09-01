@@ -181,7 +181,7 @@ public class Table implements Comparable<Table> {
      */
     public String generateCreationStatement() {
         StringBuilder sb = new StringBuilder();
-        sb.append("create table ");
+        sb.append("create table if not exists ");
         sb.append(getName()).append("(");
         getColumns().forEach(column -> {
             sb.append("`").append(column.getName()).append("`").append(" ").append(column.getType());
