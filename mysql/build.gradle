@@ -5,6 +5,11 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven {
+        allowInsecureProtocol = true
+        name "reposilite"
+        url "http://localhost:8080/snapshots"
+    }
 }
 
 group 'me.firestar311.starsql'
@@ -34,7 +39,7 @@ publishing {
 
 dependencies {
     api project(':api')
-    api 'me.firestar311.starlib:api:.0-SNAPSHOT'
+    api 'me.firestar311.starlib:api:1.0-SNAPSHOT'
     api 'com.mysql:mysql-connector-j:8.1.0'
 }
 

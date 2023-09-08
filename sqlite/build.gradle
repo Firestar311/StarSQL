@@ -5,6 +5,11 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven {
+        allowInsecureProtocol = true
+        name "reposilite"
+        url "http://localhost:8080/snapshots"
+    }
 }
 
 group 'me.firestar311.starsql'

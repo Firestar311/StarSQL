@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5df5b139-3909-42b9-b7b7-45756076e379" name="Changes" comment="Added the Postgres implementation">
-      <change afterPath="$PROJECT_DIR$/sqlite/src/main/java/me/firestar311/starsql/sqlite/SQLiteDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlite/src/main/java/me/firestar311/starsql/sqlite/SQLiteProperties.java" afterDir="false" />
+    <list default="true" id="5df5b139-3909-42b9-b7b7-45756076e379" name="Changes" comment="Added SQLite integration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SQLProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SQLProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sqlite/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +24,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$/h2">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
           <activation />
         </task>
         <projects_view>
@@ -85,10 +87,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="StarSQL:h2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="StarSQL [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/h2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -109,7 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.StarSQL:h2 [build]" />
+        <item itemvalue="Gradle.StarSQL [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +127,8 @@
       <workItem from="1693575773191" duration="3149000" />
       <workItem from="1693578952569" duration="4391000" />
       <workItem from="1694091184685" duration="330000" />
-      <workItem from="1694091745366" duration="2911000" />
+      <workItem from="1694091745366" duration="3168000" />
+      <workItem from="1694180892719" duration="143000" />
     </task>
     <task id="LOCAL-00001" summary="Some initial setup">
       <option name="closed" value="true" />
@@ -207,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694098450411</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added SQLite integration">
+      <option name="closed" value="true" />
+      <created>1694180661813</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694180661813</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,6 +235,7 @@
     <MESSAGE value="Added MySQL stuff" />
     <MESSAGE value="Added the port to the the MySQL Url" />
     <MESSAGE value="Added the Postgres implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the Postgres implementation" />
+    <MESSAGE value="Added SQLite integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SQLite integration" />
   </component>
 </project>
