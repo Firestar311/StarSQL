@@ -41,6 +41,10 @@ publishing {
     }
 }
 
+jar {
+    archiveBaseName = 'StarSQL-API'
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
