@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5df5b139-3909-42b9-b7b7-45756076e379" name="Changes" comment="Added MySQL stuff">
-      <change afterPath="$PROJECT_DIR$/postgres/src/main/java/me/firestar311/starsql/postgres/PostgresDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgres/src/main/java/me/firestar311/starsql/postgres/PostgresProperties.java" afterDir="false" />
+    <list default="true" id="5df5b139-3909-42b9-b7b7-45756076e379" name="Changes" comment="Added the Postgres implementation">
+      <change afterPath="$PROJECT_DIR$/sqlite/src/main/java/me/firestar311/starsql/sqlite/SQLiteDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sqlite/src/main/java/me/firestar311/starsql/sqlite/SQLiteProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/src/main/java/me/firestar311/starsql/mysql/MySQLDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/src/main/java/me/firestar311/starsql/mysql/MySQLDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SQLProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/me/firestar311/starsql/api/objects/SQLProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlite/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +125,7 @@
       <workItem from="1693575773191" duration="3149000" />
       <workItem from="1693578952569" duration="4391000" />
       <workItem from="1694091184685" duration="330000" />
-      <workItem from="1694091745366" duration="995000" />
+      <workItem from="1694091745366" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="Some initial setup">
       <option name="closed" value="true" />
@@ -190,7 +191,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693589051022</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added the port to the the MySQL Url">
+      <option name="closed" value="true" />
+      <created>1694098421741</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694098421741</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added the Postgres implementation">
+      <option name="closed" value="true" />
+      <created>1694098450411</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694098450411</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -205,6 +222,8 @@
     <MESSAGE value="Made it so that git ignore the .idea folder" />
     <MESSAGE value="Some bug fixes" />
     <MESSAGE value="Added MySQL stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added MySQL stuff" />
+    <MESSAGE value="Added the port to the the MySQL Url" />
+    <MESSAGE value="Added the Postgres implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the Postgres implementation" />
   </component>
 </project>

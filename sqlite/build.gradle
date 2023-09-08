@@ -25,7 +25,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = "postgres"
+            artifactId = "sqlite"
             version = version
             from components.java
         }

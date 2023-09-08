@@ -1,8 +1,6 @@
 package me.firestar311.starsql.api.objects;
 
-import java.util.Properties;
-
-public class SQLProperties extends Properties {
+public class SQLProperties {
     protected String databaseName, username, password;
     
     public SQLProperties setDatabaseName(String databaseName) {
