@@ -2,9 +2,11 @@ package me.firestar311.starsql.api.objects;
 
 import me.firestar311.starsql.api.DatabaseRegistry;
 import me.firestar311.starsql.api.StarSQL;
-import me.firestar311.starsql.api.interfaces.Database;
+import me.firestar311.starsql.api.interfaces.SQLDB;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.*;
 import java.util.Map.Entry;
@@ -18,7 +20,7 @@ import java.util.logging.Logger;
  * Please see the documentation for the get() and the save() methods for saving and loading data from the database<br>
  * All actions happen on the same thread they are called on, nothing is async. There is plans to add methods for this.
  */
-public abstract class SQLDatabase implements Database {
+public abstract class SQLDatabase implements SQLDB {
     protected Logger logger;
     protected String url, name, user, password;
     protected boolean primary;
@@ -28,9 +30,7 @@ public abstract class SQLDatabase implements Database {
     
     protected final LinkedList<Object> queue = new LinkedList<>();
     
-    protected SQLDatabase() {
-        
-    }
+    protected SQLDatabase() {}
 
     public SQLDatabase(Logger logger, SQLProperties properties) {
         this.logger = logger;
