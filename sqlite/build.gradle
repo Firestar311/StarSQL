@@ -30,7 +30,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = "sqlite"
+            artifactId = "starsql-sqlite"
             version = version
             from components.java
         }
@@ -39,7 +39,7 @@ publishing {
 
 dependencies {
     api project(':api')
-    api 'me.firestar311.starlib:api:.0-SNAPSHOT'
+    api 'me.firestar311.starlib:starlib-api:.0-SNAPSHOT'
     api 'org.xerial:sqlite-jdbc:3.43.0.0'
 }
 

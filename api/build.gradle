@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    api 'me.firestar311.starlib:api:1.0-SNAPSHOT'
+    api 'me.firestar311.starlib:starlib-api:1.0-SNAPSHOT'
 }
 
 group 'me.firestar311.starsql'
@@ -34,7 +34,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = "api"
+            artifactId = "starsql-api"
             version = version
             from components.java
         }

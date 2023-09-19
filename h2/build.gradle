@@ -30,7 +30,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = "h2"
+            artifactId = "starsql-h2"
             version = version
             from components.java
         }
@@ -39,7 +39,7 @@ publishing {
 
 dependencies {
     api project(':api')
-    api 'me.firestar311.starlib:api:1.0-SNAPSHOT'
+    api 'me.firestar311.starlib:starlib-api:1.0-SNAPSHOT'
     api 'com.h2database:h2:2.2.220'
 }
 

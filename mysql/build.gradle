@@ -30,7 +30,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = "mysql"
+            artifactId = "starsql-mysql"
             version = version
             from components.java
         }
@@ -39,7 +39,7 @@ publishing {
 
 dependencies {
     api project(':api')
-    api 'me.firestar311.starlib:api:1.0-SNAPSHOT'
+    api 'me.firestar311.starlib:starlib-api:1.0-SNAPSHOT'
     api 'com.mysql:mysql-connector-j:8.1.0'
 }
 
