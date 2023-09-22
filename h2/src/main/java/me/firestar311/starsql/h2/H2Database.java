@@ -9,12 +9,15 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class H2Database extends SQLDatabase {
-    
-    private Connection connection;
-    
     public H2Database(Logger logger, H2Properties properties) {
         super(logger, properties);
-        
+
+        try {
+            Class.forName("org.h2.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         String url = "jdbc:h2:";
         if (exists(properties.getType())) {
             url += properties.getType() + ":";
@@ -103,14 +106,6 @@ public class H2Database extends SQLDatabase {
             }
             return rows;
         }
-    }
-
-    @Override
-    public Connection getConnection() throws SQLException {
-        if (this.connection == null) {
-            this.connection = super.getConnection();
-        }
-        return connection;
     }
 
     private boolean exists(String value) {
