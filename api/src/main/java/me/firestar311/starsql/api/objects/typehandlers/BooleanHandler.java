@@ -4,13 +4,13 @@ import me.firestar311.starsql.api.objects.TypeHandler;
 
 public class BooleanHandler extends TypeHandler {
     public BooleanHandler() {
-        super(Boolean.class, "bit(1)", (column, object) -> {
+        super(Boolean.class, "varchar(5)", (column, object) -> {
             if (object instanceof Number number) {
-                return number;
+                return number.intValue() == 1 ? "true" : "false";
             } else if (object instanceof Boolean bool) {
-                return bool ? 1 : 0;
+                return bool ? "true" : "false";
             }
-            return 0;
+            return false;
         }, (column, object) -> {
             if (object instanceof Boolean bool) {
                 return bool;
