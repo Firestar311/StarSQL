@@ -429,6 +429,9 @@ public abstract class SQLDatabase implements SQLDB {
             } else {
                 statement.executeUpdate(sql);
             }
+        } catch (SQLException e) {
+            System.out.println(sql);
+            throw e;
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }

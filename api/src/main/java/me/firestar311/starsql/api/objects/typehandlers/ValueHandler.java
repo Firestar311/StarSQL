@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 
 public class ValueHandler extends TypeHandler {
     public ValueHandler() {
-        super(Value.class, "varchar(1010)", (column, object) -> {
+        super(Value.class, "varchar(1000)", (column, object) -> {
             Value value = (Value) object;
             if (value == null) {
                 return "null";

@@ -17,7 +17,7 @@ dependencies {
 }
 
 group 'me.firestar311.starsql'
-version '1.0.3-SNAPSHOT'
+version '1.0.6-SNAPSHOT'
 
 publishing {
     repositories {
