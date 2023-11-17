@@ -1,6 +1,6 @@
 package me.firestar311.starsql.api.objects;
 
-import me.firestar311.starlib.api.reflection.ReflectionHelper;
+import com.stardevllc.starlib.reflection.ReflectionHelper;
 import me.firestar311.starsql.api.annotations.ID;
 import me.firestar311.starsql.api.annotations.column.ColumnCodec;
 import me.firestar311.starsql.api.annotations.column.ColumnIgnored;
@@ -85,7 +85,7 @@ public class Table implements Comparable<Table> {
     
             Column column = new Column(this, field);
         
-            if (column.getType() == null || column.getType().equals("")) {
+            if (column.getType() == null || column.getType().isEmpty()) {
                 continue;
             }
             
@@ -127,7 +127,7 @@ public class Table implements Comparable<Table> {
         }
 
         TableName tableName = clazz.getAnnotation(TableName.class);
-        if (tableName == null || tableName.value().equals("")) {
+        if (tableName == null || tableName.value().isEmpty()) {
             return determineTableName(clazz.getSuperclass());
         }
 

@@ -1,12 +1,14 @@
 package me.firestar311.starsql.api;
 
-import me.firestar311.starlib.api.Registry;
+import com.stardevllc.starlib.registry.StringRegistry;
 import me.firestar311.starsql.api.objects.SQLDatabase;
 import me.firestar311.starsql.api.objects.Table;
 import me.firestar311.starsql.api.objects.TypeHandler;
 
 import java.sql.SQLException;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Logger;
 
 /**
@@ -19,7 +21,7 @@ import java.util.logging.Logger;
  * @see SQLDatabase
  */
 @SuppressWarnings("DanglingJavadoc")
-public class DatabaseRegistry extends Registry<SQLDatabase> {
+public class DatabaseRegistry extends StringRegistry<SQLDatabase> {
     
     private boolean setup;
     private Logger logger;
@@ -36,7 +38,7 @@ public class DatabaseRegistry extends Registry<SQLDatabase> {
      * @throws SQLException The passed exception if one occurs
      */
     public void setup() throws SQLException {
-        for (SQLDatabase database : getRegisteredObjects().values()) {
+        for (SQLDatabase database : getObjects().values()) {
             for (Table table : database.getTables()) {
                 database.execute(table.generateCreationStatement());
             }
@@ -143,7 +145,7 @@ public class DatabaseRegistry extends Registry<SQLDatabase> {
      */
     @Override
     public SQLDatabase get(String str) {
-        for (SQLDatabase object : getRegisteredObjects().values()) {
+        for (SQLDatabase object : getObjects().values()) {
             if (object.getName().equalsIgnoreCase(str)) {
                 return object;
             }

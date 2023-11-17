@@ -1,45 +1,20 @@
 plugins {
     id 'java-library'
-    id 'maven-publish'
 }
 
 repositories {
     mavenCentral()
     maven {
-        allowInsecureProtocol = true
-        name "reposilite"
-        url "http://localhost:8080/snapshots"
+        url = 'https://www.jitpack.io'
     }
 }
 
 group 'me.firestar311.starsql'
-version '1.0-SNAPSHOT'
-
-publishing {
-    repositories {
-        maven {
-            allowInsecureProtocol = true
-            name = "reposilite"
-            url "http://localhost:8080/snapshots"
-            credentials(PasswordCredentials)
-            authentication {
-                basic(BasicAuthentication)
-            }
-        }
-    }
-    publications {
-        maven(MavenPublication) {
-            groupId = group
-            artifactId = "starsql-postgres"
-            version = version
-            from components.java
-        }
-    }
-}
+version '1.1-SNAPSHOT'
 
 dependencies {
     api project(':api')
-    api 'me.firestar311.starlib:starlib-api:.0-SNAPSHOT'
+    api 'com.github.StarDevelopmentLLC:StarLib:1.0.0-alpha.1'
     api 'org.postgresql:postgresql:42.6.0'
 }
 

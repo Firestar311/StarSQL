@@ -1,6 +1,6 @@
 package me.firestar311.starsql.api.objects.typehandlers;
 
-import me.firestar311.starlib.api.Value;
+import com.stardevllc.starlib.Value;
 import me.firestar311.starsql.api.objects.TypeHandler;
 
 import java.lang.reflect.Method;
@@ -23,7 +23,7 @@ public class ValueHandler extends TypeHandler {
                 return encoded + enumObject.getClass().getName() + ":" + enumObject.name();
             }
     
-            return encoded + value.get().toString();
+            return encoded + value.get();
         }, (column, object) -> {
             String encoded = (String) object;
             if (encoded == null || encoded.isEmpty() || encoded.equalsIgnoreCase("null")) {

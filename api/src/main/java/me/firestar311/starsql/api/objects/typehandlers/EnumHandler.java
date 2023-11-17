@@ -1,6 +1,6 @@
 package me.firestar311.starsql.api.objects.typehandlers;
 
-import me.firestar311.starlib.api.reflection.ReflectionHelper;
+import com.stardevllc.starlib.reflection.ReflectionHelper;
 import me.firestar311.starsql.api.objects.TypeHandler;
 
 import java.lang.reflect.Method;
